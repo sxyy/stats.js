@@ -114,7 +114,7 @@ var Stats = function () {
 
 };
 
-Stats.fps = [];
+Stats.Fps = [];
 
 Stats.Panel = function ( name, fg, bg ) {
 
@@ -153,7 +153,7 @@ Stats.Panel = function ( name, fg, bg ) {
 
 			min = Math.min( min, value );
 			max = Math.max( max, value );
-			Stats.fps.push(value);
+			Stats.Fps.push(value);
 			context.fillStyle = bg;
 			context.globalAlpha = 1;
 			context.fillRect( 0, 0, WIDTH, GRAPH_Y );
