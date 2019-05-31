@@ -9,7 +9,6 @@
  */
 
 var Stats = function () {
-
 	var mode = 0;
 
 	var container = document.createElement( 'div' );
@@ -115,11 +114,12 @@ var Stats = function () {
 
 };
 
+Stats.fps = [];
+
 Stats.Panel = function ( name, fg, bg ) {
 
 	var min = Infinity, max = 0, round = Math.round;
 	var PR = round( window.devicePixelRatio || 1 );
-	var fps = [];
 	var WIDTH = 80 * PR, HEIGHT = 48 * PR,
 			TEXT_X = 3 * PR, TEXT_Y = 2 * PR,
 			GRAPH_X = 3 * PR, GRAPH_Y = 15 * PR,
@@ -153,7 +153,7 @@ Stats.Panel = function ( name, fg, bg ) {
 
 			min = Math.min( min, value );
 			max = Math.max( max, value );
-			fps.push(value);
+			Stats.fps.push(value);
 			context.fillStyle = bg;
 			context.globalAlpha = 1;
 			context.fillRect( 0, 0, WIDTH, GRAPH_Y );
