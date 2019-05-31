@@ -78,7 +78,7 @@ var Stats = function () {
 
 			var time = ( performance || Date ).now();
 
-			msPanel.update( time - beginTime, 200 );
+			// msPanel.update( time - beginTime, 200 );
 
 			if ( time >= prevTime + 1000 ) {
 
@@ -87,12 +87,12 @@ var Stats = function () {
 				prevTime = time;
 				frames = 0;
 
-				if ( memPanel ) {
+				// if ( memPanel ) {
 
-					var memory = performance.memory;
-					memPanel.update( memory.usedJSHeapSize / 1048576, memory.jsHeapSizeLimit / 1048576 );
+				// 	var memory = performance.memory;
+				// 	memPanel.update( memory.usedJSHeapSize / 1048576, memory.jsHeapSizeLimit / 1048576 );
 
-				}
+				// }
 
 			}
 
